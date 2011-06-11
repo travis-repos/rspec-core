@@ -1,4 +1,4 @@
-@no-ruby-186
+@announce
 Feature: default_path
 
   As of rspec-2.7 (not yet released), you can just type `rspec` to run all

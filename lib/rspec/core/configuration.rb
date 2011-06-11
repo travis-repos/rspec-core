@@ -299,9 +299,9 @@ EOM
 
       def files_or_directories_to_run=(*files)
         files = files.flatten
-        if files.empty? && default_path
-          files << default_path
-        end
+        # if files.empty? && default_path
+        #   files << default_path
+        # end
         self.files_to_run = get_files_to_run(files)
       end
 
@@ -427,6 +427,7 @@ EOM
       end
 
       def load_spec_files
+        self.files_or_directories_to_run=default_path if files_to_run.empty?
         files_to_run.map {|f| load File.expand_path(f) }
         raise_if_rspec_1_is_loaded
       end
